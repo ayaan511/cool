@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cool Project</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b0f1a;
+        --card: rgba(16, 24, 42, 0.8);
+        --text: #e7eefc;
+        --accent: #79f2ff;
+        --accent-2: #ffd479;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at top, #1a2646, #0b0f1a 50%, #05070c);
+        color: var(--text);
+      }
+
+      header {
+        padding: 3rem 8vw;
+        display: grid;
+        gap: 1.5rem;
+        background: linear-gradient(120deg, rgba(121, 242, 255, 0.2), transparent 60%);
+      }
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        color: inherit;
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid transparent;
+      }
+
+      nav a:hover {
+        border-color: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 4vw, 4.2rem);
+        margin: 0;
+      }
+
+      .hero p {
+        max-width: 55ch;
+        line-height: 1.6;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .button {
+        padding: 0.75rem 1.5rem;
+        border-radius: 999px;
+        border: none;
+        font-weight: 600;
+        background: var(--accent);
+        color: #07131e;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(121, 242, 255, 0.35);
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(231, 238, 252, 0.3);
+        box-shadow: none;
+      }
+
+      main {
+        padding: 2rem 8vw 4rem;
+        display: grid;
+        gap: 3rem;
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        padding: 1.5rem;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid rgba(121, 242, 255, 0.1);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 20px 50px rgba(3, 8, 23, 0.6);
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .timeline-item {
+        display: grid;
+        gap: 0.5rem;
+        padding: 1.25rem 1.5rem;
+        border-radius: 16px;
+        background: rgba(12, 18, 34, 0.8);
+        border-left: 3px solid var(--accent-2);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .stat {
+        padding: 1.25rem;
+        border-radius: 18px;
+        background: rgba(8, 14, 26, 0.85);
+        border: 1px solid rgba(255, 212, 121, 0.3);
+      }
+
+      footer {
+        padding: 2rem 8vw 3rem;
+        border-top: 1px solid rgba(121, 242, 255, 0.2);
+        display: grid;
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-links a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(121, 242, 255, 0.15);
+        border: 1px solid rgba(121, 242, 255, 0.4);
+        font-size: 0.85rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery figure {
+        margin: 0;
+        padding: 1rem;
+        border-radius: 16px;
+        background: rgba(14, 21, 38, 0.9);
+        border: 1px solid rgba(121, 242, 255, 0.15);
+      }
+
+      .gallery .swatch {
+        height: 90px;
+        border-radius: 12px;
+        margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#vision">Vision</a>
+        <a href="#features">Features</a>
+        <a href="#story">Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stats">Stats</a>
+      </nav>
+      <div class="hero">
+        <span class="badge">⚡ Coolness Amplified</span>
+        <h1>Welcome to the Cool Project</h1>
+        <p>
+          This is a bold, neon-charged landing page packed with rich layout, plenty
+          of HTML, and a fun futuristic vibe. Scroll around, explore the sections,
+          and feel the atmosphere.
+        </p>
+        <div class="cta-row">
+          <button class="button">Launch the Cool</button>
+          <button class="button secondary">Take the Tour</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="vision">
+        <h2 class="section-title">Vision</h2>
+        <p>
+          The Cool Project is about blending craftsmanship, creativity, and a touch of
+          cosmic wonder. Each part of this page is designed to feel dynamic, layered,
+          and expressive.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Immersive Layout</h3>
+            <p>Glassmorphism cards, gradients, and responsive grids keep things sleek.</p>
+          </article>
+          <article class="card">
+            <h3>Purposeful Motion</h3>
+            <p>Hover states and glowing accents provide energy without being loud.</p>
+          </article>
+          <article class="card">
+            <h3>Storytelling</h3>
+            <p>Sections flow like chapters of a short, stylish narrative.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2 class="section-title">Feature Deck</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Signal Boost</h3>
+            <ul>
+              <li>Layered typography</li>
+              <li>Neon highlight treatments</li>
+              <li>Comfortable line length</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Atmosphere Builder</h3>
+            <ul>
+              <li>Custom gradients</li>
+              <li>Soft blurs and glows</li>
+              <li>Deep-space palette</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Workflow Ready</h3>
+            <ul>
+              <li>Semantic HTML blocks</li>
+              <li>Scalable sections</li>
+              <li>Accessible contrast</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>On-Brand Extras</h3>
+            <ul>
+              <li>Stat trackers</li>
+              <li>Mini timeline</li>
+              <li>Gallery swatches</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="story">
+        <h2 class="section-title">The Cool Story</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Phase 01: Spark</strong>
+            <p>We gathered inspiration from neon skylines and retro-future tech.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Phase 02: Build</strong>
+            <p>Grids, cards, and call-to-action buttons pulled everything together.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Phase 03: Launch</strong>
+            <p>The full experience is polished, vivid, and ready to explore.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 class="section-title">Gallery Swatches</h2>
+        <div class="gallery">
+          <figure>
+            <div class="swatch" style="background: linear-gradient(135deg, #79f2ff, #6c8dff);"></div>
+            <figcaption>Arctic Pulse</figcaption>
+          </figure>
+          <figure>
+            <div class="swatch" style="background: linear-gradient(135deg, #ffd479, #ff7ab6);"></div>
+            <figcaption>Solar Bloom</figcaption>
+          </figure>
+          <figure>
+            <div class="swatch" style="background: linear-gradient(135deg, #8bff9c, #3de1ff);"></div>
+            <figcaption>Mint Drift</figcaption>
+          </figure>
+          <figure>
+            <div class="swatch" style="background: linear-gradient(135deg, #a98bff, #ff9cd8);"></div>
+            <figcaption>Violet Wave</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="stats">
+        <h2 class="section-title">Cool Stats</h2>
+        <div class="stats">
+          <div class="stat">
+            <h3>98%</h3>
+            <p>Glow Factor</p>
+          </div>
+          <div class="stat">
+            <h3>42x</h3>
+            <p>Idea Velocity</p>
+          </div>
+          <div class="stat">
+            <h3>7</h3>
+            <p>New Horizons</p>
+          </div>
+          <div class="stat">
+            <h3>365</h3>
+            <p>Days of Cool</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Cool Project HQ</strong>
+      <p>Crafted with imagination, and a lot of HTML blocks, to make everything feel alive.</p>
+      <div class="footer-links">
+        <a href="#vision">Vision</a>
+        <a href="#features">Features</a>
+        <a href="#story">Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stats">Stats</a>
+      </div>
+      <span>Stay cool ✨</span>
+    </footer>
+  </body>
+</html>
